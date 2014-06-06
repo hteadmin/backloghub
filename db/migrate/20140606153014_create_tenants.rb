@@ -1,6 +1,6 @@
-class CreateAccounts < ActiveRecord::Migration
+class CreateTenants < ActiveRecord::Migration
   def change
-    create_table :accounts do |t|
+    create_table :tenants do |t|
       t.string :name
       t.string :subdomain
 

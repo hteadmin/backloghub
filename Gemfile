@@ -14,3 +14,8 @@ gem 'spring',        group: :development
 
 # 3RD-PARTY GEMS
 gem 'apartment'
+
+group :development do
+  gem 'thin'
+  gem 'quiet_assets'
+end
