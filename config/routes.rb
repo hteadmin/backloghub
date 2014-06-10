@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   constraints(TenantSubdomain) do
-    resources :products
+    scope :module => 'tenant' do
+      root 'index#home'
+      resources :products
+    end
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

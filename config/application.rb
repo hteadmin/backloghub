@@ -21,5 +21,14 @@ module Bizhub
     # config.i18n.default_locale = :de
 
     config.autoload_paths += %W(#{config.root}/lib)
+
+    if !!Rails.application.secrets.notify_exception
+        config.middleware.use ExceptionNotification::Rack,
+            :email => {
+              :email_prefix => "[#{Rails.application.secrets.app_name}]",
+              :sender_address => [Rails.application.secrets.noreply_email],
+              :exception_recipients => Rails.application.secrets.sysadmin_emails.split
+            }
+    end
   end
 end

@@ -17,7 +17,7 @@ Apartment.configure do |config|
   #
   # config.excluded_models = %w{Tenant}
   #
-  config.excluded_models = %w{Tenant}
+  config.excluded_models = %w{Tenant User TenantMembership}
 
   # use postgres schemas?
   config.use_schemas = true
@@ -42,4 +42,4 @@ end
 
 # Rails.application.config.middleware.use 'Apartment::Elevators::Domain'
 
-Rails.application.config.middleware.use 'Apartment::Elevators::Subdomain'
+Rails.application.config.middleware.use 'SubdomainElevator'

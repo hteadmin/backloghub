@@ -14,8 +14,12 @@ gem 'spring',        group: :development
 
 # 3RD-PARTY GEMS
 gem 'apartment'
+gem "sorcery"
+gem 'exception_notification'
+gem 'websocket-rails'
 
 group :development do
   gem 'thin'
   gem 'quiet_assets'
+  gem 'letter_opener'
 end
