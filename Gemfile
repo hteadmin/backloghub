@@ -16,7 +16,7 @@ gem 'spring',        group: :development
 gem 'apartment'
 gem "sorcery"
 gem 'exception_notification'
-gem 'websocket-rails'
+gem "font-awesome-rails"
 
 group :development do
   gem 'thin'
