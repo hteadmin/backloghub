@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem 'wicked_pdf'
+gem 'faker'
 
 # 3RD-PARTY GEMS
 gem 'apartment'
@@ -22,4 +24,11 @@ group :development do
   gem 'thin'
   gem 'quiet_assets'
   gem 'letter_opener'
+end
+
+group :development, :test do
+  gem 'spring-commands-rspec'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'rb-fsevent' if `uname` =~ /Darwin/
 end

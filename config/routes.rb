@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   root 'index#home'
+  get 'testpdf', to: 'index#testpdf'
 
   constraints(TenantSubdomain) do
     scope :module => 'tenant' do
