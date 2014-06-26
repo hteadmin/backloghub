@@ -1,4 +1,4 @@
-class Forms::Registration
+class Registration
 
   include ActiveModel::Model
 
@@ -11,7 +11,7 @@ class Forms::Registration
   end
 
   def tenant
-    @tenant ||= Tenant.new(name: business_name, subdomain: business_name.parameterize)
+    @tenant ||= Tenant.new(name: business_name)
   end
 
   validate do

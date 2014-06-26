@@ -29,3 +29,10 @@ end
 group :development, :test do
   gem 'factory_girl_rails'
 end
+
+group :test do
+  gem 'simplecov', :require => false
+  gem 'simplecov-rcov'
+  gem 'mocha'
+  gem 'minitest-reporters' # output colored test result
+end

@@ -4,18 +4,10 @@ class Tenant < ActiveRecord::Base
   has_many :members, through: :tenant_memberships, class_name: 'User', source: :user
   belongs_to :owner, class_name: 'User'
 
-  validates :subdomain, presence: true
+  validates :name, presence: true, uniqueness: true
 
-  after_create :create_schema
-  after_destroy :destroy_schema
+  before_create { |tenant| tenant.subdomain = tenant.name.parameterize }
+  after_create { |tenant| Apartment::Database.create(subdomain) }
+  after_destroy { |tenant| Apartment::Database.drop(subdomain) }
 
-  private
-
-  def create_schema
-    Apartment::Database.create(subdomain)
-  end
-
-  def destroy_schema
-    Apartment::Database.drop(subdomain)
-  end
 end
