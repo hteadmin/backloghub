@@ -8,10 +8,10 @@ default: &default
 
 development:
   <<: *default
-  database: bizhub_development
+  database: backloghub_development
 test:
   <<: *default
-  database: bizhub_test
+  database: backloghub_test
 production:
   <<: *default
-  database: bizhub_production
+  database: backloghub_production
